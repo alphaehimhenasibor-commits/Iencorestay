@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>I Encore Stay | Airbnb Co-Hosting Western Australia</title>
+<title>I Encore Stay | Premium Airbnb Co-Hosting Western Australia</title>
+
+<meta name="description" content="Luxury Airbnb co-hosting and short-stay management in Western Australia. Maximise revenue, elevate guest experience, and simplify property management.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -17,7 +19,10 @@
   --bg:#F7F5EF;
 }
 
-/* BASE */
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Inter, sans-serif;
@@ -25,145 +30,19 @@ body{
   color:var(--black);
 }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:linear-gradient(rgba(11,15,20,0.65),rgba(11,15,20,0.65)),
-  url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80');
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:20px;
-}
-
-.hero h1{
-  font-family:"Playfair Display", serif;
-  font-size:52px;
-  margin:0;
-  letter-spacing:1px;
-}
-
-.hero p{
-  margin-top:15px;
-  font-size:16px;
-  color:#E5E5E5;
-  max-width:650px;
-}
-
-.gold{
-  color:var(--gold);
-}
-
-.btn{
-  margin-top:25px;
-  display:inline-block;
-  padding:12px 22px;
-  border:1px solid var(--gold);
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:var(--gold);
-  color:black;
-}
-
-/* SECTIONS */
-.section{
-  padding:100px 20px;
-  max-width:1100px;
-  margin:auto;
-  text-align:center;
-}
-
-h2{
-  font-family:"Playfair Display", serif;
-  font-size:34px;
-  margin-bottom:20px;
-}
-
-p{
-  color:#444;
-  max-width:800px;
-  margin:auto;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
-  margin-top:40px;
-}
-
-.card{
-  background:white;
-  padding:30px;
-  border:1px solid #E7E5E4;
-  text-align:left;
-}
-
-.card h3{
-  margin-top:0;
-  font-family:"Playfair Display", serif;
-}
-
-/* LUXURY BANNER */
-.banner{
-  background:#0B0F14;
-  color:white;
-  padding:80px 20px;
-  text-align:center;
-}
-
-.banner h2{
-  color:white;
-}
-
-.banner p{
-  color:#ccc;
-}
-
-/* FORM */
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid #ddd;
-}
-
-form{
-  max-width:500px;
-  margin:auto;
-}
-
-/* FOOTER */
-footer{
-  background:#0B0F14;
-  color:white;
-  text-align:center;
-  padding:50px 20px;
-}
-
-.small{
-  color:#999;
-  font-size:13px;
-}
-
 /* NAV */
 .nav{
-  position:absolute;
+  position:fixed;
   top:0;
   width:100%;
-  padding:20px 40px;
+  padding:18px 40px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   color:white;
+  z-index:1000;
+  background:rgba(11,15,20,0.75);
+  backdrop-filter:blur(10px);
 }
 
 .logo{
@@ -176,6 +55,143 @@ footer{
   text-decoration:none;
   border:1px solid var(--gold);
   padding:10px 14px;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(rgba(11,15,20,0.6),rgba(11,15,20,0.6)),
+    url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80');
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-family:"Playfair Display", serif;
+  font-size:58px;
+  margin:0;
+  animation:fadeUp 1s ease;
+}
+
+.hero span{color:var(--gold);}
+
+.hero p{
+  max-width:700px;
+  margin:20px auto;
+  color:#ddd;
+  animation:fadeUp 1.3s ease;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 22px;
+  border:1px solid var(--gold);
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:black;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* SECTIONS */
+.section{
+  padding:120px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+h2{
+  font-family:"Playfair Display", serif;
+  font-size:38px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border:1px solid #E7E5E4;
+  text-align:left;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.stat{
+  font-size:26px;
+  font-weight:600;
+}
+
+/* FORM */
+form{
+  max-width:500px;
+  margin:auto;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ddd;
+}
+
+/* FOOTER */
+footer{
+  background:#0B0F14;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.small{
+  color:#aaa;
+  font-size:13px;
+}
+
+/* FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 16px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
 }
 </style>
 </head>
@@ -191,10 +207,10 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Premium Airbnb Co-Hosting<br><span class="gold">Western Australia</span></h1>
+    <h1>Luxury Airbnb Co-Hosting<br><span>Western Australia</span></h1>
     <p>
-      Boutique short-stay management for property owners who expect higher returns,
-      premium guest experience, and complete operational simplicity.
+      Boutique short-stay management designed to maximise revenue,
+      elevate guest experience, and unlock the full potential of your property.
     </p>
     <a class="btn" href="#services">Explore Services</a>
   </div>
@@ -202,11 +218,17 @@ footer{
 
 <!-- ABOUT -->
 <section class="section">
-  <h2>About I Encore Stay</h2>
+  <h2>About</h2>
   <p>
-    We are a Western Australia-based Airbnb co-hosting service focused on luxury short-stay management.
-    Our approach is simple: maximise revenue, elevate presentation, and deliver consistent five-star guest experiences.
+    I Encore Stay is a premium Airbnb co-hosting service operating across Western Australia.
+    We manage short-stay properties with a hospitality-first, revenue-focused approach.
   </p>
+
+  <div class="stats">
+    <div><div class="stat">+Revenue Growth Focus</div></div>
+    <div><div class="stat">24/7 Guest Support</div></div>
+    <div><div class="stat">WA Market Expertise</div></div>
+  </div>
 </section>
 
 <!-- SERVICES -->
@@ -214,33 +236,19 @@ footer{
   <h2>Services</h2>
 
   <div class="grid">
-    <div class="card">
-      <h3>Property Optimisation</h3>
-      Listing design, photography guidance, and conversion-focused setup.
-    </div>
-
-    <div class="card">
-      <h3>Revenue Management</h3>
-      Dynamic pricing based on demand, seasonality, and WA market data.
-    </div>
-
-    <div class="card">
-      <h3>Guest Experience</h3>
-      End-to-end communication and hospitality management.
-    </div>
-
-    <div class="card">
-      <h3>Operations</h3>
-      Cleaning coordination, maintenance oversight, and scheduling.
-    </div>
+    <div class="card"><h3>Listing Optimisation</h3>High-converting Airbnb listings.</div>
+    <div class="card"><h3>Revenue Management</h3>Dynamic pricing strategy.</div>
+    <div class="card"><h3>Guest Experience</h3>Full hospitality management.</div>
+    <div class="card"><h3>Operations</h3>Cleaning & maintenance coordination.</div>
   </div>
 </section>
 
 <!-- LUXURY SECTION -->
-<section class="banner">
-  <h2>Designed for Performance</h2>
+<section class="section">
+  <h2>Performance-Driven Hospitality</h2>
   <p>
-    We treat every property as a premium hospitality asset — not just a listing.
+    We treat every property as a high-performing hospitality asset,
+    not just a rental listing.
   </p>
 </section>
 
@@ -253,7 +261,7 @@ footer{
     <input placeholder="Email (info@iencorestay.com.au)">
     <input placeholder="Property Location">
     <textarea placeholder="Tell us about your property"></textarea>
-    <button class="btn" style="background:#C9A227;color:black;border:none;padding:12px 20px;cursor:pointer;">
+    <button class="btn" style="background:#C9A227;color:black;border:none;">
       Request Consultation
     </button>
   </form>
@@ -263,12 +271,18 @@ footer{
 <footer>
   <p><strong>I Encore Stay</strong></p>
   <p>Premium Airbnb Co-Hosting Western Australia</p>
+
   <p class="small">
-    Email: info@iencorestay.com.au <br>
-    Phone: +61 4XX XXX XXX <br>
-    ABN: YOUR ABN HERE
+    📧 info@iencorestay.com.au <br>
+    📞 +61 4XX XXX XXX <br>
+    🏢 ABN: 48893621946
   </p>
 </footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/61400000000" target="_blank">
+  WhatsApp
+</a>
 
 </body>
 </html>
