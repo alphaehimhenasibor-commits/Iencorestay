@@ -1,337 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>I Encore Stay | Airbnb Co-Hosting WA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root{
+  --primary:#0F172A;
+  --secondary:#1E293B;
+  --accent:#D4AF37;
+  --accent-hover:#E5C158;
+  --background:#F8F5EE;
+  --white:#FFFFFF;
 }
 
 body{
-font-family:'Inter',sans-serif;
-color:#111;
-line-height:1.6;
+  background:var(--background);
+  color:var(--secondary);
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:0 20px;
-}
-
-header{
-position:sticky;
-top:0;
-background:white;
-border-bottom:1px solid #eee;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
-
-.brand{
-font-weight:800;
-font-size:1.2rem;
+header,
+footer{
+  background:var(--primary);
 }
 
 .hero{
-padding:120px 20px;
-text-align:center;
-background:#111;
-color:white;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:var(--white);
 }
 
-.hero h1{
-font-size:3.5rem;
-margin-bottom:20px;
+.btn,
+.btn-accent{
+  background:var(--accent);
+  color:var(--primary);
+  font-weight:700;
 }
 
-.hero p{
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 25px;
-background:white;
-color:#111;
-text-decoration:none;
-border-radius:8px;
-font-weight:700;
-}
-
-section{
-padding:80px 0;
-}
-
-h2{
-text-align:center;
-margin-bottom:15px;
-}
-
-.subtitle{
-text-align:center;
-color:#666;
-max-width:700px;
-margin:auto;
-margin-bottom:50px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.btn:hover,
+.btn-accent:hover{
+  background:var(--accent-hover);
 }
 
 .card{
-border:1px solid #eee;
-padding:25px;
-border-radius:12px;
+  background:#FFFFFF;
+  border:1px solid #E5E7EB;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.grey{
-background:#f8f8f8;
+.accent-text,
+.highlight{
+  color:var(--accent);
 }
-
-input{
-width:100%;
-padding:15px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-button{
-width:100%;
-padding:15px;
-background:#111;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-.result{
-margin-top:20px;
-font-weight:700;
-font-size:1.2rem;
-text-align:center;
-}
-
-.contact{
-background:#111;
-color:white;
-text-align:center;
-}
-
-.contact a{
-color:white;
-text-decoration:none;
-}
-
-footer{
-padding:30px;
-text-align:center;
-border-top:1px solid #eee;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.3rem;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="container">
-<nav>
-<div class="brand">I Encore Stay</div>
-<div>0422 190 926</div>
-</nav>
-</div>
-</header>
-
-<section class="hero">
-
-<h1>Airbnb Co-Hosting in Western Australia</h1>
-
-<p>
-Helping property owners maximise revenue while removing the stress of short-term rental management.
-</p>
-
-<a href="#contact" class="btn">
-Free Property Assessment
-</a>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2>Our Services</h2>
-
-<p class="subtitle">
-Everything required to run a successful Airbnb property.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>Listing Optimisation</h3>
-<p>Professional listing creation and setup.</p>
-</div>
-
-<div class="card">
-<h3>Dynamic Pricing</h3>
-<p>Revenue-focused pricing strategies.</p>
-</div>
-
-<div class="card">
-<h3>Guest Communication</h3>
-<p>Fast and professional guest support.</p>
-</div>
-
-<div class="card">
-<h3>Cleaning Coordination</h3>
-<p>Reliable guest-ready turnovers.</p>
-</div>
-
-<div class="card">
-<h3>Property Inspections</h3>
-<p>Regular checks and reporting.</p>
-</div>
-
-<div class="card">
-<h3>Maintenance Support</h3>
-<p>Quick response to issues.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="grey">
-
-<div class="container">
-
-<h2>Revenue Calculator</h2>
-
-<p class="subtitle">
-Estimate annual revenue from your property.
-</p>
-
-<input type="number" id="rate" placeholder="Nightly Rate (AUD)">
-<input type="number" id="occupancy" placeholder="Occupancy %">
-
-<button onclick="calculateRevenue()">
-Calculate Revenue
-</button>
-
-<div id="result" class="result"></div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2>WA STRA Information</h2>
-
-<p class="subtitle">
-Helping owners understand short-term rental requirements in Western Australia.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>Registration</h3>
-<p>STRA properties generally need registration before advertising and taking bookings.</p>
-</div>
-
-<div class="card">
-<h3>Perth Rules</h3>
-<p>Some Perth metro properties may require additional approvals depending on operation.</p>
-</div>
-
-<div class="card">
-<h3>Compliance Support</h3>
-<p>We can help guide owners through the process.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>Get Your Free Property Assessment</h2>
-
-<p>0422 190 926</p>
-
-<p>
-<a href="mailto:info@iencorestay.com.au">
-info@iencorestay.com.au
-</a>
-</p>
-
-</div>
-
-</section>
-
-<footer>
-I Encore Stay | Western Australia
-</footer>
-
-<script>
-
-function calculateRevenue(){
-
-let rate =
-parseFloat(document.getElementById('rate').value) || 0;
-
-let occupancy =
-(parseFloat(document.getElementById('occupancy').value) || 0)/100;
-
-let revenue =
-rate * occupancy * 365;
-
-document.getElementById('result').innerHTML =
-'Estimated Annual Revenue: $' +
-revenue.toLocaleString();
-
-}
-
-</script>
-
-</body>
-</html>
