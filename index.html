@@ -8,9 +8,6 @@
 
 <meta name="description" content="Premium Airbnb co-hosting in Western Australia. Maximise revenue, occupancy, and guest experience with I Encore Stay.">
 
-<!-- SEO -->
-<meta name="keywords" content="Airbnb co-host Perth, property management WA, short stay management Western Australia, Airbnb management Perth">
-
 <style>
 :root{
   --primary:#0F172A;
@@ -23,31 +20,29 @@
   --border:#E5E7EB;
 }
 
-/* GLOBAL */
 body{
   margin:0;
-  font-family:system-ui, -apple-system, sans-serif;
+  font-family:system-ui, sans-serif;
   background:var(--bg);
   color:var(--secondary);
   line-height:1.6;
 }
 
-/* NAV */
+/* HEADER */
 header{
   background:var(--primary);
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .nav{
+  max-width:1100px;
+  margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 20px;
-  max-width:1100px;
-  margin:auto;
+  padding:18px;
 }
 
 .logo{
@@ -62,13 +57,11 @@ header{
   padding:12px 18px;
   border-radius:8px;
   font-weight:700;
-  display:inline-block;
-  transition:0.3s;
+  text-decoration:none;
 }
 
 .btn:hover{
   background:var(--accent-hover);
-  transform:translateY(-2px);
 }
 
 /* HERO */
@@ -76,42 +69,21 @@ header{
   background:linear-gradient(135deg,var(--primary),var(--secondary));
   color:#fff;
   text-align:center;
-  padding:100px 20px;
-  animation:fadeIn 1s ease-in;
+  padding:90px 20px;
 }
 
-.hero h1{
-  font-size:44px;
-  margin-bottom:15px;
-}
-
-.hero span{
-  color:var(--accent);
-}
-
-.hero p{
-  max-width:700px;
-  margin:auto;
-  color:#cbd5e1;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
+.hero h1{font-size:44px;}
+.hero span{color:var(--accent);}
+.hero p{max-width:700px;margin:auto;color:#cbd5e1;}
 
 /* SECTIONS */
 .section{
-  padding:80px 20px;
+  padding:70px 20px;
   max-width:1100px;
   margin:auto;
 }
 
-h2{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:40px;
-}
+h2{text-align:center;margin-bottom:30px;}
 
 /* GRID */
 .grid{
@@ -125,51 +97,39 @@ h2{
   padding:20px;
   border-radius:12px;
   border:1px solid var(--border);
-  box-shadow:0 10px 20px rgba(0,0,0,0.05);
-  transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-5px);
-}
-
-/* MAP SECTION */
-.map{
+/* CALCULATOR */
+.calc{
   background:#fff;
-  padding:20px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  text-align:center;
-}
-
-/* ABOUT */
-.about{
-  text-align:center;
-  color:var(--muted);
-  max-width:800px;
-  margin:auto;
-}
-
-/* CONTACT */
-.contact-box{
-  background:#fff;
-  padding:30px;
+  padding:25px;
   border-radius:12px;
   border:1px solid var(--border);
   max-width:500px;
   margin:auto;
 }
 
-input,textarea{
+input{
   width:100%;
   padding:12px;
-  margin-top:10px;
-  margin-bottom:15px;
+  margin:10px 0;
   border:1px solid var(--border);
-  border-radius:6px;
+  border-radius:8px;
 }
 
-/* FLOATING WHATSAPP */
+.result{
+  font-size:20px;
+  font-weight:700;
+  color:var(--primary);
+  margin-top:10px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -179,7 +139,6 @@ input,textarea{
   padding:14px 16px;
   border-radius:50px;
   font-weight:700;
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
   text-decoration:none;
 }
 
@@ -205,57 +164,71 @@ footer{
 
 <section class="hero">
   <h1>Premium Airbnb Co-Hosting in <span>Western Australia</span></h1>
-  <p>
-    We manage your Airbnb so you earn more, stress less, and maintain full ownership.
-  </p>
+  <p>We manage your Airbnb so you earn more, stress less, and maintain full ownership.</p>
   <br>
-  <a class="btn" href="#contact">Book Free Consultation</a>
+  <a class="btn" href="#calculator">Estimate Your Earnings</a>
 </section>
 
+<!-- SERVICES -->
 <section class="section">
-  <h2>Our Services</h2>
+  <h2>Services</h2>
   <div class="grid">
-
     <div class="card">Listing Optimisation</div>
-    <div class="card">Dynamic Pricing Strategy</div>
-    <div class="card">Guest Communication</div>
+    <div class="card">Dynamic Pricing</div>
+    <div class="card">Guest Management</div>
     <div class="card">Cleaning Coordination</div>
-
   </div>
 </section>
 
+<!-- CALCULATOR -->
+<section class="section" id="calculator">
+  <h2>Revenue Estimator</h2>
+
+  <div class="calc">
+    <label>Nightly Rate (AUD)</label>
+    <input id="rate" type="number" placeholder="e.g. 180">
+
+    <label>Occupancy Rate (%)</label>
+    <input id="occ" type="number" placeholder="e.g. 75">
+
+    <label>Days per Month</label>
+    <input id="days" type="number" value="30">
+
+    <button class="btn" onclick="calc()">Calculate</button>
+
+    <div class="result" id="result">Estimated Monthly Revenue: $0</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
 <section class="section">
-  <h2>Why Choose Us</h2>
-  <div class="about">
-    <p>
-      We help WA property owners maximise Airbnb revenue using data-driven pricing,
-      professional guest management, and premium presentation standards.
-    </p>
-  </div>
+  <h2>Why I Encore Stay</h2>
+  <p style="text-align:center;max-width:800px;margin:auto;color:#64748B;">
+    We help WA property owners maximise Airbnb revenue through professional management,
+    pricing optimisation, and guest experience systems.
+  </p>
 </section>
 
-<!-- WA MAP SECTION -->
-<section class="section">
-  <h2>Where We Operate</h2>
-  <div class="map">
-    <p><strong>Western Australia Coverage</strong></p>
-    <p>Perth • Fremantle • Subiaco • Scarborough • Cottesloe • East Perth • South Perth</p>
-    <p style="color:#64748B;">Expanding across regional WA</p>
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section class="section" id="contact">
-  <h2>Get a Free Property Review</h2>
+  <h2>Free Property Review</h2>
 
-  <div class="contact-box">
-    <form onsubmit="event.preventDefault();alert('We will contact you shortly!');">
+  <div class="calc">
+    <form onsubmit="event.preventDefault();alert('We will contact you shortly');">
       <input placeholder="Full Name" required>
-      <input placeholder="Email" required>
-      <input placeholder="Property Location" required>
-      <textarea placeholder="Tell us about your property"></textarea>
-      <button class="btn" style="width:100%;">Submit Request</button>
+      <input placeholder="Email (info@iencorestay.com.au)">
+      <input placeholder="Property Location">
+      <textarea placeholder="Tell us about your property" style="width:100%;padding:12px;border-radius:8px;border:1px solid #E5E7EB;"></textarea>
+      <br><br>
+      <button class="btn" style="width:100%;">Submit</button>
     </form>
   </div>
+
+  <p style="text-align:center;margin-top:20px;color:#64748B;">
+    📞 Phone: +61 4XX XXX XXX <br>
+    📧 Email: info@iencorestay.com.au <br>
+    🏢 ABN: YOUR ABN HERE
+  </p>
 </section>
 
 <footer>
@@ -263,12 +236,24 @@ footer{
   <p>Premium Airbnb Co-Hosting Western Australia</p>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp"
-   href="https://wa.me/61400000000"
-   target="_blank">
-   WhatsApp Us
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/61400000000" target="_blank">
+  WhatsApp Us
 </a>
+
+<!-- CALCULATOR SCRIPT -->
+<script>
+function calc(){
+  let rate = document.getElementById('rate').value || 0;
+  let occ = document.getElementById('occ').value || 0;
+  let days = document.getElementById('days').value || 30;
+
+  let revenue = rate * (occ/100) * days;
+
+  document.getElementById('result').innerText =
+    "Estimated Monthly Revenue: $" + revenue.toFixed(0);
+}
+</script>
 
 </body>
 </html>
