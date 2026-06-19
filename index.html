@@ -1,46 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>I Encore Stay | Airbnb Co-Hosting Western Australia</title>
+
+<meta name="description" content="Premium Airbnb co-hosting in Western Australia. Maximise revenue, occupancy, and guest experience with I Encore Stay.">
+
+<!-- SEO -->
+<meta name="keywords" content="Airbnb co-host Perth, property management WA, short stay management Western Australia, Airbnb management Perth">
+
+<style>
 :root{
   --primary:#0F172A;
   --secondary:#1E293B;
   --accent:#D4AF37;
   --accent-hover:#E5C158;
-  --background:#F8F5EE;
+  --bg:#F8F5EE;
   --white:#FFFFFF;
+  --muted:#64748B;
+  --border:#E5E7EB;
 }
 
+/* GLOBAL */
 body{
-  background:var(--background);
+  margin:0;
+  font-family:system-ui, -apple-system, sans-serif;
+  background:var(--bg);
   color:var(--secondary);
+  line-height:1.6;
 }
 
-header,
-footer{
+/* NAV */
+header{
   background:var(--primary);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.hero{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  color:var(--white);
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
-.btn,
-.btn-accent{
+.logo{
+  color:#fff;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.btn{
   background:var(--accent);
   color:var(--primary);
+  padding:12px 18px;
+  border-radius:8px;
   font-weight:700;
+  display:inline-block;
+  transition:0.3s;
 }
 
-.btn:hover,
-.btn-accent:hover{
+.btn:hover{
   background:var(--accent-hover);
+  transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  text-align:center;
+  padding:100px 20px;
+  animation:fadeIn 1s ease-in;
+}
+
+.hero h1{
+  font-size:44px;
+  margin-bottom:15px;
+}
+
+.hero span{
+  color:var(--accent);
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#cbd5e1;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* SECTIONS */
+.section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
 .card{
-  background:#FFFFFF;
-  border:1px solid #E5E7EB;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
 }
 
-.accent-text,
-.highlight{
-  color:var(--accent);
+.card:hover{
+  transform:translateY(-5px);
 }
+
+/* MAP SECTION */
+.map{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+/* ABOUT */
+.about{
+  text-align:center;
+  color:var(--muted);
+  max-width:800px;
+  margin:auto;
+}
+
+/* CONTACT */
+.contact-box{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  max-width:500px;
+  margin:auto;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  margin-bottom:15px;
+  border:1px solid var(--border);
+  border-radius:6px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 16px;
+  border-radius:50px;
+  font-weight:700;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">I ENCORE STAY</div>
+    <a class="btn" href="#contact">Free Property Review</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Premium Airbnb Co-Hosting in <span>Western Australia</span></h1>
+  <p>
+    We manage your Airbnb so you earn more, stress less, and maintain full ownership.
+  </p>
+  <br>
+  <a class="btn" href="#contact">Book Free Consultation</a>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="grid">
+
+    <div class="card">Listing Optimisation</div>
+    <div class="card">Dynamic Pricing Strategy</div>
+    <div class="card">Guest Communication</div>
+    <div class="card">Cleaning Coordination</div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="about">
+    <p>
+      We help WA property owners maximise Airbnb revenue using data-driven pricing,
+      professional guest management, and premium presentation standards.
+    </p>
+  </div>
+</section>
+
+<!-- WA MAP SECTION -->
+<section class="section">
+  <h2>Where We Operate</h2>
+  <div class="map">
+    <p><strong>Western Australia Coverage</strong></p>
+    <p>Perth • Fremantle • Subiaco • Scarborough • Cottesloe • East Perth • South Perth</p>
+    <p style="color:#64748B;">Expanding across regional WA</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Get a Free Property Review</h2>
+
+  <div class="contact-box">
+    <form onsubmit="event.preventDefault();alert('We will contact you shortly!');">
+      <input placeholder="Full Name" required>
+      <input placeholder="Email" required>
+      <input placeholder="Property Location" required>
+      <textarea placeholder="Tell us about your property"></textarea>
+      <button class="btn" style="width:100%;">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><strong>I Encore Stay</strong></p>
+  <p>Premium Airbnb Co-Hosting Western Australia</p>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp"
+   href="https://wa.me/61400000000"
+   target="_blank">
+   WhatsApp Us
+</a>
+
+</body>
+</html>
