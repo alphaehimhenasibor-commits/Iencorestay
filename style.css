@@ -102,7 +102,13 @@ body {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  background: radial-gradient(circle at center, #1a1a1f, #0b0b0d);
+
+  background: linear-gradient(
+      rgba(11,11,13,0.75),
+      rgba(11,11,13,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267")
+    center/cover no-repeat;
 }
 
 .hero-content {
@@ -292,4 +298,12 @@ footer {
   font-weight: bold;
   text-decoration: none;
   z-index: 999;
+}
+
+.card img {
+  transition: 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
