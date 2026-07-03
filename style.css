@@ -8,6 +8,9 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+<a class="call-float" href="tel:0422190926">
+  📞 Call
+</a>
 
 body {
   background: #0b0b0d;
@@ -255,4 +258,38 @@ footer {
     padding: 70px 20px;
   }
 
+}
+/* =========================
+   CONTACT ENHANCEMENTS
+========================= */
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons a {
+  margin: 5px;
+}
+
+.cta input {
+  transition: 0.3s;
+}
+
+.cta input:focus {
+  outline: 1px solid #c8a96a;
+  background: #222;
+}
+
+/* Sticky call button */
+.call-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c8a96a;
+  color: #0b0b0d;
+  padding: 12px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
 }
